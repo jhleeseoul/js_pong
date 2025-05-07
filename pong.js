@@ -38,8 +38,8 @@ function startGame(diff) {
 
     const reactionMap = {
         easy: 0.03,
-        moderate: 0.06,
-        hard: 0.1
+        moderate: 0.05,
+        hard: 0.07
     };
     aiReactionFactor = reactionMap[diff];
 
