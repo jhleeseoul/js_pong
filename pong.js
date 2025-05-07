@@ -33,9 +33,9 @@ function startGame(diff) {
     document.getElementById('game-controls').style.display = 'block';
     gameState = "playing";
 
-    if (diff === "easy") ballSpeed = 5; aiSpeed = 2;
-    if (diff === "moderate") ballSpeed = 7; aiSpeed = 4;
-    if (diff === "hard") ballSpeed = 9; aiSpeed = 7;
+    if (diff === "easy") ballSpeed = 3; aiSpeed = 2;
+    if (diff === "moderate") ballSpeed = 5; aiSpeed = 4;
+    if (diff === "hard") ballSpeed = 7; aiSpeed = 7;
 
     resetGame();
     requestAnimationFrame(gameLoop);
