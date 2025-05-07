@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pong Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="start-screen">
+    <h1>PONG</h1>
+    <button onclick="startGame('easy')">Easy</button>
+    <button onclick="startGame('moderate')">Moderate</button>
+    <button onclick="startGame('hard')">Hard</button>
+  </div>
+
+  <canvas id="gameCanvas" width="800" height="600" style="display:none;"></canvas>
+  <div id="game-controls" style="display:none; margin-top: 20px;">
+    <button onclick="goHome()">홈으로</button>
+    <button onclick="restartGame()">재시작</button>
+  </div>  
+  <script src="pong.js"></script>
+</body>
+</html>
