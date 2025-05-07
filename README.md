@@ -1,7 +1,7 @@
 # 🕹️ JSPong - 클래식 HTML5 탁구 게임
 
 > HTML, CSS, JavaScript만으로 만든 클래식 Pong 게임  
-> 🎮 배포 주소: [jspong.kro.kr](https://jspong.kro.kr)
+> 🎮 배포 주소: [js-pong.kro.kr](jspong.kro.kr)
 
 ---
 
