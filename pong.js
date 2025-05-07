@@ -20,6 +20,8 @@ let ballVelY = 3;
 
 let difficulty = "easy";   // 현재 난이도 저장
 let endMessage = "";       // 승/패 메시지 저장
+let aiReactionFactor = 0.05;
+
 
 let keys = {};
 
@@ -28,10 +30,18 @@ document.addEventListener('keyup', (e) => keys[e.key.toLowerCase()] = false);
 
 function startGame(diff) {
     difficulty = diff;
+
     document.getElementById('start-screen').style.display = 'none';
     canvas.style.display = 'block';
     document.getElementById('game-controls').style.display = 'block';
     gameState = "playing";
+
+    const reactionMap = {
+        easy: 0.03,
+        moderate: 0.06,
+        hard: 0.1
+    };
+    aiReactionFactor = reactionMap[diff];
 
     if (diff === "easy") ballSpeed = 3; aiSpeed = 2;
     if (diff === "moderate") ballSpeed = 5; aiSpeed = 4;
@@ -117,8 +127,9 @@ function update() {
     // AI 선형 보간 움직임
     let aiCenter = aiY + paddleHeight / 2;
     let diff = ballY - aiCenter;
-    aiY += diff * (aiSpeed / 50); // easy: 0.04, moderate: 0.08, hard: 0.14 정도 느낌
-    aiY = Math.max(0, Math.min(canvas.height - paddleHeight, aiY));
+    let delta = diff * aiReactionFactor;
+    const maxSpeed = 6;
+    aiY += Math.max(-maxSpeed, Math.min(maxSpeed, delta));
 
     // Move ball
     ballX += ballVelX;
